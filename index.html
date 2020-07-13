@@ -321,7 +321,22 @@
       
         
           
-            
+            <p>##豆浆油条</p>
+<blockquote>
+<p>欢迎关注豆浆的博客<br>#共同点</p>
+</blockquote>
+<ul>
+<li>二者都是自增</li>
+<li>二者在被使用时都会在栈内存中开辟一个空间进行备份<br>#区别</li>
+<li>a++备份时是先备份在自增</li>
+<li>++a备份时是先自增在备份<br>#例子<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int a &#x3D; 1;</span><br><span class="line">a &#x3D; a++;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>此时的a的值还是1，因为a++是先备份，而备份的值为1，然后再将备份的1赋值给a。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int a &#x3D; 1;</span><br><span class="line">a &#x3D; ++a;</span><br></pre></td></tr></table></figure>
+<p>此时的a的值为2，因为++a是先自增，自增完后为2，然后再将2备份，赋值给a</p>
+
           
         
       
