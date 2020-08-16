@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="豆浆油条 欢迎关注豆浆的博客">
+<meta name="description" content="欢迎关注豆浆的博客">
 <meta property="og:type" content="article">
-<meta property="og:title" content="从零复习Java之a++与++a的区别">
-<meta property="og:url" content="http://yoursite.com/2020/07/14/%E4%BB%8E%E9%9B%B6%E5%A4%8D%E4%B9%A0Java%E4%B9%8Ba-%E4%B8%8E-a%E7%9A%84%E5%8C%BA%E5%88%AB/index.html">
+<meta property="og:title" content="maven缓存不更新问题">
+<meta property="og:url" content="http://yoursite.com/2020/08/15/maven%E7%BC%93%E5%AD%98%E4%B8%8D%E6%9B%B4%E6%96%B0%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="豆浆">
-<meta property="og:description" content="豆浆油条 欢迎关注豆浆的博客">
-<meta property="article:published_time" content="2020-07-14T01:18:24.000Z">
-<meta property="article:modified_time" content="2020-07-14T01:23:23.961Z">
+<meta property="og:description" content="欢迎关注豆浆的博客">
+<meta property="article:published_time" content="2020-08-15T03:39:57.000Z">
+<meta property="article:modified_time" content="2020-08-16T03:48:00.793Z">
 <meta property="article:author" content="豆浆">
 <meta name="twitter:card" content="summary">
 
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/07/14/从零复习Java之a-与-a的区别/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/08/15/maven缓存不更新问题/"/>
 
 
 
 
 
-  <title>从零复习Java之a++与++a的区别 | 豆浆</title>
+  <title>maven缓存不更新问题 | 豆浆</title>
   
 
 
@@ -251,7 +251,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/14/%E4%BB%8E%E9%9B%B6%E5%A4%8D%E4%B9%A0Java%E4%B9%8Ba-%E4%B8%8E-a%E7%9A%84%E5%8C%BA%E5%88%AB/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/15/maven%E7%BC%93%E5%AD%98%E4%B8%8D%E6%9B%B4%E6%96%B0%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="豆浆">
@@ -268,7 +268,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">从零复习Java之a++与++a的区别</h1>
+          <h1 class="post-title" itemprop="name headline">maven缓存不更新问题</h1>
         
 
         <div class="post-meta">
@@ -280,8 +280,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-14T09:18:24+08:00">
-                2020-07-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-15T11:39:57+08:00">
+                2020-08-15
               </time>
             
 
@@ -318,23 +318,11 @@
       
 
       
-        <h2 id="豆浆油条"><a href="#豆浆油条" class="headerlink" title="豆浆油条"></a>豆浆油条</h2><blockquote>
+        <blockquote>
 <p>欢迎关注豆浆的博客</p>
 </blockquote>
 <a id="more"></a>
-<h1 id="共同点"><a href="#共同点" class="headerlink" title="共同点"></a>共同点</h1><ul>
-<li>二者都是自增</li>
-<li>二者在被使用时都会在栈内存中开辟一个空间进行备份</li>
-</ul>
-<h1 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h1><ul>
-<li>a++备份时是先备份在自增</li>
-<li>++a备份时是先自增在备份</li>
-</ul>
-<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int a &#x3D; 1;</span><br><span class="line">a &#x3D; a++;</span><br></pre></td></tr></table></figure>
-<p>此时的a的值还是1，因为a++是先备份，而备份的值为1，然后再将备份的1赋值给a。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int a &#x3D; 1;</span><br><span class="line">a &#x3D; ++a;</span><br></pre></td></tr></table></figure>
-<p>此时的a的值为2，因为++a是先自增，自增完后为2，然后再将2备份，赋值给a</p>
-
+<h1 id="maven项目中遇到有缓存没更新时须在pom-xml中添加如下信息"><a href="#maven项目中遇到有缓存没更新时须在pom-xml中添加如下信息" class="headerlink" title="maven项目中遇到有缓存没更新时须在pom.xml中添加如下信息"></a>maven项目中遇到有缓存没更新时须在pom.xml中添加如下信息</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;build&gt;</span><br><span class="line">       &lt;resources&gt;</span><br><span class="line">           &lt;resource&gt;</span><br><span class="line">               &lt;directory&gt;src&#x2F;main&#x2F;java&lt;&#x2F;directory&gt;</span><br><span class="line">               &lt;includes&gt;</span><br><span class="line">                   &lt;include&gt;**&#x2F;*.properties&lt;&#x2F;include&gt;</span><br><span class="line">                   &lt;include&gt;**&#x2F;*.xml&lt;&#x2F;include&gt;</span><br><span class="line">               &lt;&#x2F;includes&gt;</span><br><span class="line">               &lt;filtering&gt;false&lt;&#x2F;filtering&gt;</span><br><span class="line">           &lt;&#x2F;resource&gt;</span><br><span class="line">           &lt;resource&gt;</span><br><span class="line">               &lt;directory&gt;src&#x2F;main&#x2F;resources&lt;&#x2F;directory&gt;</span><br><span class="line">               &lt;includes&gt;</span><br><span class="line">                   &lt;include&gt;**&#x2F;*.properties&lt;&#x2F;include&gt;</span><br><span class="line">                   &lt;include&gt;**&#x2F;*.xml&lt;&#x2F;include&gt;</span><br><span class="line">               &lt;&#x2F;includes&gt;</span><br><span class="line">               &lt;filtering&gt;false&lt;&#x2F;filtering&gt;</span><br><span class="line">           &lt;&#x2F;resource&gt;</span><br><span class="line">       &lt;&#x2F;resources&gt;</span><br><span class="line">   &lt;&#x2F;build&gt;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -358,14 +346,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2020/07/18/%E5%8F%B7%E4%B8%8Eequals%E7%9A%84%E5%8C%BA%E5%88%AB/" rel="next" title="==号与equals的区别">
+                <i class="fa fa-chevron-left"></i> ==号与equals的区别
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/07/14/%E4%BB%8E%E9%9B%B6%E5%A4%8D%E4%B9%A0Java%E4%B9%8B%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9/" rel="prev" title="从零复习Java之构造方法小知识点">
-                从零复习Java之构造方法小知识点 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/08/16/mybatis%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" rel="prev" title="mybatis的配置文件">
+                mybatis的配置文件 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -484,7 +476,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#豆浆油条"><span class="nav-number">1.</span> <span class="nav-text">豆浆油条</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#共同点"><span class="nav-number"></span> <span class="nav-text">共同点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#区别"><span class="nav-number"></span> <span class="nav-text">区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#例子"><span class="nav-number"></span> <span class="nav-text">例子</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#maven项目中遇到有缓存没更新时须在pom-xml中添加如下信息"><span class="nav-number">1.</span> <span class="nav-text">maven项目中遇到有缓存没更新时须在pom.xml中添加如下信息</span></a></li></ol></div>
             
 
           </div>
